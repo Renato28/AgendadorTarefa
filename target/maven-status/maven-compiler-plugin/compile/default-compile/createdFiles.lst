@@ -1,0 +1,9 @@
+br\com\renato\model\Tarefa.class
+br\com\renato\bean\JpaResourceBean.class
+br\com\renato\dao\TarefaDao.class
+br\com\renato\enums\Prioridade.class
+br\com\renato\model\Responsavel.class
+br\com\renato\bean\TarefaBean.class
+br\com\renato\enums\Situacao.class
+br\com\renato\service\TarefaService.class
+br\com\renato\service\TarefaServiceImpl.class

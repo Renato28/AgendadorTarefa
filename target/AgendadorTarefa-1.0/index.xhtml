@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>Agendador de Tarefas</title>
+</h:head>
+<h:body>
+    <h1>Listagem de tarefas</h1>
+
+    <h:messages globalOnly="true"/>
+
+    <h:link value="Nova Tarefa" outcome="adicionar"/>
+
+    <h:dataTable value="#{tarefaBean.tarefas}" var="tarefa">
+        <h:column>
+            <f:facet name="header">#</f:facet>
+            #{tarefa.id}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Título</f:facet>
+            #{tarefa.titulo}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Descrição</f:facet>
+            #{tarefa.descricao}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Prioridade</f:facet>
+            <h:outputText value="#{tarefa.prioridade}"/>
+        </h:column>
+		<h:column>
+            <f:facet name="header">Responsavel</f:facet>
+            <h:outputText value="#{tarefa.responsavel}"/>
+        </h:column>
+        <h:column>
+            <h:link value="Editar" outcome="editar">
+                <f:param name="tarefa" value="#{tarefa.id}"/>
+            </h:link>
+        </h:column>
+        <h:column>
+            <h:link value="Remover" outcome="remover">
+                <f:param name="tarefa" value="#{tarefa.id}"/>
+            </h:link>
+        </h:column>
+         <h:column>
+            <h:link value="Concluir" outcome="concluir">
+                <f:param name="tarefa" value="#{tarefa.id}"/>
+            </h:link>
+        </h:column>
+    </h:dataTable>
+</h:body>
+</html>
